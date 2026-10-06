@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   portafolio-front:
-    build: .
+    image: nginx:alpine
     container_name: portafolio-front
     restart: unless-stopped
+    volumes:
+      - .:/usr/share/nginx/html
     ports:
       - "80"
     networks:
